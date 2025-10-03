@@ -206,6 +206,19 @@ p, a, li, span, button {
 }
 
 
+.habilidad-card {
+  background-color: #001E4A !important;
+  border-radius: 10px;
+  border: 2px solid #F5F7FA !important;
+  transition: transform 0.3s ease;
+}
+
+.habilidad-card:hover {
+  transform: translateY(-5px);
+}
+
+
+
 /* Responsive */
 @media (max-width: 991px) {
   .lista-menu {

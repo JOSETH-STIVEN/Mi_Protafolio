@@ -9,3 +9,17 @@ enlaces.forEach(enlace => {
     this.classList.add("activo");
   });
 });
+
+
+document.getElementById("btnVerMas").addEventListener("click", function() {
+  const masHabilidades = document.getElementById("masHabilidades");
+  masHabilidades.classList.toggle("d-none");
+
+  // cambiar texto del botón
+  if (masHabilidades.classList.contains("d-none")) {
+    this.textContent = "Ver más";
+  } else {
+    this.textContent = "Ver menos";
+  }
+});
+
