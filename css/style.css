@@ -252,9 +252,9 @@ transform: translateY(5px);
   font-size: 60px;
   font-weight: 900; 
   text-align: center;
-  background: linear-gradient(90deg, #ffffff, #f5f7fa); 
-  background-clip: text;         /* estándar */
-  -webkit-background-clip: text; /* para Chrome, Safari, Edge */
+  background: linear-gradient(90deg, #ffffff, #f5f7fa) ; 
+  background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent; 
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
@@ -262,9 +262,71 @@ transform: translateY(5px);
 
 
 #portafolio h5 {
-  color: #F5F7FA;
+  color: #F5F7FA ;
   font-size: 30px;
   font-weight: 800;
+}
+
+
+.estudio-card {
+  background-color: #001e4a !important; 
+  border: 2px solid #f5f7fa !important;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 260px;
+  transition: transform 0.3s ease;
+  color: #d1d5db !important; 
+}
+
+
+.estudio-card:hover {
+  transform: translateY(5px); 
+}
+
+.icono-estudio {
+  font-size: 2.5rem;
+  color: #f5f7fa;
+  margin-bottom: 15px;
+}
+
+.icono-mini {
+  font-size: 1.5rem;
+  color: #f5f7fa;
+}
+
+
+/* Botones personalizados */
+.custom-control {
+  position: absolute;
+  top: 250px !important; /* 👈 los baja un poco más */
+  transform: translateY(-50%);
+  border-radius: 50%;
+  padding: 12px;
+  z-index: 5;
+
+}
+
+.carousel-control-prev.custom-control {
+  left: -80px; 
+}
+
+.carousel-control-next.custom-control {
+  right: -100px;
+}
+
+.custom-control span {
+  filter: invert(0); /* íconos en negro para que se vean sobre el fondo blanco */
+  width: 30px;
+  height: 30px;
+}
+
+#estudios h2 {
+  color: #f5f7fa; 
+  font-size: 48px;     
+  font-weight: 900;            
+  letter-spacing: 4px; 
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); 
 }
 
 
