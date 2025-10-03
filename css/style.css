@@ -1,0 +1,157 @@
+/* Importar tipografías desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+/* GENERAL */
+body {
+  font-family: 'Lato', sans-serif; /* Texto general */
+  margin: 0;
+  padding: 0;
+  background-color: #001E4A !important;
+  color: #F5F7FA;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ysabeau Infant', sans-serif; 
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Párrafos y texto normal */
+p, a, li, span, button {
+  font-family: 'Lato', sans-serif;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  background-color: #07143B; 
+}
+
+.barra-navegacion {
+  padding: 10px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagen-logo {
+  width: 110px;
+  height: auto;
+}
+
+.texto-logo {
+  color: #F5F7FA;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.lista-menu {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.enlace-menu {
+  color: #F5F7FA !important;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.enlace-menu:hover {
+  color: #ffcc00 !important;
+}
+
+.enlace-menu.activo {
+  color: #ffcc00;
+}
+
+.enlace-menu.activo::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffcc00;
+}
+
+/* HERO */
+.hero {
+  background-color: #001E4A; /* Fondo azul */
+  color: #F5F7FA;
+}
+
+.texto-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+
+}
+
+.texto-hero h1 {
+  font-family: 'Ysabeau Infant', sans-serif; /* Tipografía principal */
+  font-weight: 700;
+  font-size: 3rem; /* Ajusta según tu diseño */
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff, #e6e6e6); /* Blanco puro a gris muy claro */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* Sombra un poco más suave */
+}
+
+
+
+
+.texto-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 40px;
+}
+
+/* Botón */
+.boton-hero {
+  background-color: #F5F7FA !important;
+  color: #07143B;   
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  display: inline-flex;   
+  align-items: center;       
+  gap: 8px;
+  margin-top: 80px;                  
+}
+
+.boton-hero i {
+  font-size: 1.2rem;  
+}
+
+.boton-hero:hover {
+  background-color: #ffcc00;
+  color: #07143B !important;   
+}
+
+/* Imagen */
+.foto-hero {
+  max-width: 300px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .lista-menu {
+    margin-left: 0;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
