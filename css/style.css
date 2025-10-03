@@ -219,6 +219,57 @@ p, a, li, span, button {
 
 
 
+.portfolio-card {
+  background-color: #001e4a;
+  border: 2px solid #f5f7fa;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  height: 100%;
+  color: #f5f7fa; /* 🎨 todo el texto en gris */
+}
+
+.portfolio-card:hover {
+transform: translateY(5px);
+}
+.portfolio-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.github-link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 15px 0;
+  display: inline-block;
+  transition: color 0.3s;
+}
+.github-link:hover {
+  color: #0dcaf0;
+}
+
+#portafolio h2{
+  font-size: 60px;
+  font-weight: 900; 
+  text-align: center;
+  background: linear-gradient(90deg, #ffffff, #f5f7fa); 
+  background-clip: text;         /* estándar */
+  -webkit-background-clip: text; /* para Chrome, Safari, Edge */
+  color: transparent;
+  -webkit-text-fill-color: transparent; 
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+#portafolio h5 {
+  color: #F5F7FA;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+
+
+
 /* Responsive */
 @media (max-width: 991px) {
   .lista-menu {
