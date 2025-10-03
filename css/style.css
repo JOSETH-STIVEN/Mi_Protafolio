@@ -178,6 +178,33 @@ p, a, li, span, button {
   object-fit: cover;
 }
 
+.perfil-img {
+  max-width: 280px;
+  border-radius: 15px;
+}
+
+.perfil-card {
+  background-color: #07143B !important;
+  color: #F5F7FA !important; 
+  border-radius: 10px;
+  border: 1px solid #F5F7FA;
+}
+
+.icono-red {
+  color: #F5F7FA;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.icono-red:hover {
+  color: #ffcc00;
+}
+
+.frase-final {
+  margin-top: 60px;
+  font-size: 1.1rem;
+}
+
 
 /* Responsive */
 @media (max-width: 991px) {
