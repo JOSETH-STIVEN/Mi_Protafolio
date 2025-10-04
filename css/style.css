@@ -295,10 +295,10 @@ transform: translateY(5px);
 }
 
 
-/* Botones personalizados */
+
 .custom-control {
   position: absolute;
-  top: 250px !important; /* 👈 los baja un poco más */
+  top: 250px !important; 
   transform: translateY(-50%);
   border-radius: 50%;
   padding: 12px;
@@ -315,7 +315,7 @@ transform: translateY(5px);
 }
 
 .custom-control span {
-  filter: invert(0); /* íconos en negro para que se vean sobre el fondo blanco */
+  filter: invert(0); 
   width: 30px;
   height: 30px;
 }
@@ -328,6 +328,108 @@ transform: translateY(5px);
   text-align: center;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); 
 }
+
+
+
+/* Estilo para el título igual que PORTAFOLIO */
+.titulo-principal {
+  color: #f5f7fa;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo de las tarjetas */
+.experiencia-card {
+  background-color: #001e4a !important;
+  border: 2px solid #f5f7fa !important;
+  border-radius: 12px;
+  padding: 20px;
+  height: 100%;
+  transition: transform 0.3s ease;
+  color: #f5f7fa !important;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.experiencia-card:hover {
+  transform: translateY(-5px);
+}
+
+.experiencia-card h5 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #f5f7fa;
+}
+
+
+#experiencias .btn {
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+#experiencias .btn:hover {
+  background-color: #0dcaf0;
+  color: #001e4a;
+}
+
+
+.titulo-principal {
+  color: #f5f7fa;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+
+.hobby-card {
+  background-color: #001e4a !important;
+  border: 2px solid #f5f7fa !important;
+  border-radius: 20px;
+  padding: 20px;
+  color: #f5f7fa !important;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.hobby-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.hobby-img-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #f5f7fa;
+  border-radius: 20px;
+}
+
+
+.hobby-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+.col-md-4.d-flex {
+  align-items: stretch;
+}
+.hobby-card {
+  flex: 1;
+}
+
+
 
 
 
