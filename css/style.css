@@ -37,6 +37,11 @@ p, a, li, span, button {
   transition: color 0.3s ease;
 }
 
+.navbar-toggler{
+  background-color: #F5F7FA !important;
+  color: #001E4A;
+}
+
 .logo {
   display: flex;
   align-items: center;
