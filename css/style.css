@@ -497,4 +497,8 @@ html {
   .navbar-brand {
     color: #001E4A !important; /* Azul oscuro para mejor visibilidad */
   }
+  .navbar-toggler{
+    background-color: #F5F7FA !important;
+    color: #001E4A;
+  }
 }
