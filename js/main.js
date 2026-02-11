@@ -40,21 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // 2. ANIMACIONES CON GSAP
 // =========================
 
-// Títulos en scroll
-gsap.utils.toArray(".titulo-seccion").forEach((titulo) => {
-  gsap.from(titulo, {
-    scrollTrigger: {
-      trigger: titulo,
-      start: "top 80%",
-    },
-    opacity: 0,
-    y: 40,
-    duration: 0.6
-  });
-});
-
-// Tarjetas animadas
-gsap.utils.toArray(".card").forEach((card) => {
+// GSAP ahora solo animará el contenedor principal, no las caras internas
+gsap.utils.toArray(".experiencia-card, .hobby-card").forEach((card) => {
   gsap.from(card, {
     scrollTrigger: {
       trigger: card,
@@ -166,3 +153,14 @@ if (themeToggle) {
     }
   });
 }
+
+
+document.querySelectorAll('.hobby-card').forEach(card => {
+    card.addEventListener('click', function() {
+      // Busca el contenedor interno que tiene la rotación
+      const innerCard = this.querySelector('.hobby-card-inner');
+      
+      // Alterna la clase 'is-flipped' al hacer clic
+      innerCard.classList.toggle('is-flipped');
+    });
+  });

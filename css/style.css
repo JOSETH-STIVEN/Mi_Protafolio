@@ -1315,10 +1315,7 @@ h2 {
       animation-delay: 0.1s;
     }
 
-    #experiencias .col-md-4:nth-child(2) .experiencia-card,
-    #experiencias .col-md-6:nth-child(2) .experiencia-card {
-      animation-delay: 0.2s;
-    }
+    
 
     #experiencias .col-md-4:nth-child(3) .experiencia-card,
     #experiencias .col-md-6:nth-child(3) .experiencia-card {
@@ -1573,62 +1570,100 @@ h2 {
 }
 
 /* =========================
-   TARJETAS DE HOBBY
+   ESTRUCTURA DE GIRO (FLIP)
    ========================= */
-
 .hobby-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
+  background: transparent;
+  height: 380px; /* Ajusta según tus imágenes */
+  perspective: 1200px;
+  opacity: 0; /* Para la animación de entrada */
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.hobby-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.hobby-card:hover .hobby-card-inner {
+  transform: rotateY(180deg);
+}
+
+.hobby-card-front, .hobby-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 0;
-  height: 100%;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
   overflow: hidden;
 }
 
-/* Efecto de brillo diagonal */
-.hobby-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.08) 50%,
-    transparent 70%
-  );
-  transform: translateX(-100%) translateY(-100%) rotate(45deg);
-  transition: transform 0.8s ease;
-  z-index: 1;
+
+
+/* ---- CARA TRASERA: hazla visible y con contraste ---- */
+.hobby-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #0d1f3c 0%, #0a1628 60%, #0d2040 100%); /* azul oscuro en vez de negro puro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border: 1px solid rgba(57, 200, 255, 0.5); /* borde más visible */
+  box-shadow:
+    inset 0 0 40px rgba(57, 200, 255, 0.08),
+    0 0 30px rgba(57, 200, 255, 0.2);
 }
 
-.hobby-card:hover::before {
-  transform: translateX(100%) translateY(100%) rotate(45deg);
+/* ---- Título del reverso ---- */
+.hobby-back-content h5 {
+  color: #39c8ff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-shadow:
+    0 0 12px rgba(57, 200, 255, 0.7),
+    0 0 30px rgba(57, 200, 255, 0.3);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
-.hobby-card:hover {
-  transform: translateY(-15px) scale(1.03);
-  border-color: rgba(57, 200, 255, 0.5);
-  box-shadow: 
-    0 0 35px rgba(0, 195, 255, 0.5),
-    0 20px 45px rgba(0, 0, 0, 0.6);
+/* ---- Divisor ---- */
+.hobby-back-content .divider {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #39c8ff, transparent);
+  margin: 10px auto 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(57, 200, 255, 0.6);
 }
+
+/* ---- Párrafo: blanco puro con buena legibilidad ---- */
+.hobby-back-content p {
+  color: #e8f4ff;           /* blanco azulado, no gris oscuro */
+  font-size: 0.97rem;
+  line-height: 1.75;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+
 
 /* =========================
-   CONTENEDOR DE IMAGEN
+   TU ESTÉTICA ORIGINAL (FRONT)
    ========================= */
 
 .hobby-img-wrapper {
   width: 100%;
   height: 280px;
   overflow: hidden;
-  border-radius: 20px 20px 0 0;
   position: relative;
   background: #0d0f16;
 }
@@ -1637,16 +1672,11 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: brightness(0.8) contrast(1.1);
+  filter: brightness(0.8);
+  transition: 0.5s ease;
 }
 
-.hobby-card:hover .hobby-img {
-  transform: scale(1.15) rotate(2deg);
-  filter: brightness(1) contrast(1.2);
-}
-
-/* Overlay gradient en la imagen */
+/* Reutilizamos tu overlay gradient */
 .hobby-img-wrapper::after {
   content: "";
   position: absolute;
@@ -1655,225 +1685,62 @@ h2 {
   right: 0;
   height: 70%;
   background: linear-gradient(to top, rgba(11, 15, 25, 0.95), transparent);
-  pointer-events: none;
   z-index: 1;
 }
 
-/* Efecto de brillo en el borde de la imagen */
-.hobby-img-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(57, 200, 255, 0.3),
-    transparent
-  );
-  transition: left 0.6s ease;
-  z-index: 2;
-}
-
-.hobby-card:hover .hobby-img-wrapper::before {
-  left: 100%;
-}
-
-/* =========================
-   TÍTULO DEL HOBBY
-   ========================= */
-
-.hobby-card h5 {
+.hobby-card-front h5 {
   font-size: 1.4rem;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin: 0;
+  text-align: center;
   padding: 20px;
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-.hobby-card h5::after {
+/* Tu efecto de brillo diagonal aplicado al inner para que gire con la tarjeta */
+.hobby-card-inner::before {
   content: "";
   position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #39c8ff, transparent);
-  transition: width 0.3s ease;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.8s ease;
+  z-index: 5;
+  pointer-events: none;
 }
 
-.hobby-card:hover h5::after {
-  width: 70%;
+.hobby-card:hover .hobby-card-inner::before {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
 }
 
-.hobby-card:hover h5 {
-  color: #39c8ff;
-  text-shadow: 0 0 15px rgba(57, 200, 255, 0.5);
-}
 
-/* =========================
-   ANIMACIONES DE ENTRADA
-   ========================= */
-
-.hobby-card {
-  animation: fadeSlideUp 0.6s ease forwards;
-  opacity: 0;
-}
-
-/* Delay escalonado */
-#hobbies .col-md-4:nth-child(1) .hobby-card {
-  animation-delay: 0.1s;
-}
-
-#hobbies .col-md-4:nth-child(2) .hobby-card {
-  animation-delay: 0.2s;
-}
-
-#hobbies .col-md-4:nth-child(3) .hobby-card {
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   EFECTOS ADICIONALES
-   ========================= */
-
-/* Borde superior con brillo */
-.hobby-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #39c8ff, transparent);
-  transition: width 0.4s ease;
-  z-index: 3;
-}
-
-.hobby-card:hover::after {
-  width: 100%;
-}
-
-/* Sombra interna sutil */
-.hobby-card {
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* Icono flotante al hacer hover (opcional) */
-.hobby-img-wrapper {
-  position: relative;
-}
-
-/* Efecto de resplandor pulsante en hover */
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 
-      0 0 35px rgba(0, 195, 255, 0.5),
-      0 20px 45px rgba(0, 0, 0, 0.6);
-  }
-  50% {
-    box-shadow: 
-      0 0 45px rgba(0, 195, 255, 0.7),
-      0 20px 45px rgba(0, 0, 0, 0.6);
-  }
-}
-
+/* Efecto de resplandor pulsante que ya tenías */
 .hobby-card:hover {
   animation: glowPulse 2s ease-in-out infinite;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-@media (max-width: 992px) {
-  #hobbies h2 {
-    font-size: 2.2rem;
-  }
-
-  .hobby-img-wrapper {
-    height: 250px;
-  }
-
-  .hobby-card h5 {
-    font-size: 1.3rem;
-    padding: 18px;
-  }
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(0, 195, 255, 0.3); }
+  50% { box-shadow: 0 0 45px rgba(0, 195, 255, 0.5); }
 }
 
-@media (max-width: 768px) {
-  #hobbies h2 {
-    font-size: 2rem;
-  }
+/* Mantén tu animación fadeSlideUp y los delays que ya tenías */
 
-  .hobby-img-wrapper {
-    height: 220px;
-  }
-
-  .hobby-card {
-    margin-bottom: 20px;
-  }
-
-  .hobby-card h5 {
-    font-size: 1.2rem;
-    padding: 16px;
-  }
+/* Esta clase la activará el JavaScript al hacer clic */
+.hobby-card-inner.is-flipped {
+  transform: rotateY(180deg);
 }
 
-@media (max-width: 576px) {
-  #hobbies {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .hobby-img-wrapper {
-    height: 200px;
-  }
-
-  .hobby-card h5 {
-    font-size: 1.1rem;
-    padding: 14px;
-  }
+/* Opcional: Cambia el cursor para que el usuario sepa que puede hacer clic */
+.hobby-card {
+  cursor: pointer;
 }
 
-/* =========================
-   VARIACIONES DE COLOR (opcional)
-   ========================= */
 
-/* Si quieres que cada hobby tenga un color diferente */
-.hobby-card:nth-child(1):hover {
-  border-color: rgba(57, 200, 255, 0.6);
-}
-
-.hobby-card:nth-child(2):hover {
-  border-color: rgba(138, 80, 255, 0.6);
-}
-
-.hobby-card:nth-child(3):hover {
-  border-color: rgba(255, 80, 138, 0.6);
-}
 
 
 
