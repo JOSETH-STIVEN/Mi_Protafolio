@@ -291,6 +291,56 @@ window.addEventListener('load', () => {
 
 
 /* ------------------------------------------------
+   8b. SENA PROGRESS BAR — animate on scroll
+   ------------------------------------------------ */
+(function initSenaProgress() {
+  const fill = document.querySelector('.sena-progress-fill');
+  if (!fill) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        fill.style.width = '80%';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(fill.closest('.sena-progress-wrap'));
+})();
+
+
+/* ------------------------------------------------
+   8c. ANIMATED STAT COUNTERS
+   ------------------------------------------------ */
+(function initCounters() {
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el     = entry.target;
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const dur    = 1400;
+      const step   = dur / target;
+      let current  = 0;
+
+      const timer = setInterval(() => {
+        current++;
+        el.textContent = current;
+        if (current >= target) clearInterval(timer);
+      }, step);
+
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(c => observer.observe(c));
+})();
+
+
+/* ------------------------------------------------
    9. HOBBY CARDS — flip on click (mobile friendly)
    ------------------------------------------------ */
 (function initHobbyCards() {
@@ -392,6 +442,71 @@ window.addEventListener('load', () => {
       ease: 'power2.out'
     });
   });
+})();
+
+
+/* ------------------------------------------------
+   12. ID CARD — 3D tilt interactivo
+   ------------------------------------------------ */
+(function initIdCard() {
+  const card = document.getElementById('idCard');
+  if (!card) return;
+
+  let isHovering  = false;
+  let rafId       = null;
+  let targetRx    = 0, targetRy = 0;
+  let currentRx   = 0, currentRy = 0;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function animate() {
+    if (!isHovering) return;
+    currentRx = lerp(currentRx, targetRx, 0.1);
+    currentRy = lerp(currentRy, targetRy, 0.1);
+    card.style.transform = `rotateX(${currentRx}deg) rotateY(${currentRy}deg) scale(1.03)`;
+    rafId = requestAnimationFrame(animate);
+  }
+
+  card.addEventListener('mouseenter', () => {
+    isHovering = true;
+    card.style.animationPlayState = 'paused';
+    card.style.transition = 'box-shadow 0.3s ease';
+    animate();
+  });
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const cx   = rect.left + rect.width  / 2;
+    const cy   = rect.top  + rect.height / 2;
+    targetRx   = ((e.clientY - cy) / (rect.height / 2)) * -14;
+    targetRy   = ((e.clientX - cx) / (rect.width  / 2)) *  14;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    isHovering = false;
+    cancelAnimationFrame(rafId);
+    card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease';
+    card.style.transform  = '';
+    card.style.animationPlayState = '';
+    setTimeout(() => { card.style.transition = ''; }, 600);
+    targetRx = 0; targetRy = 0;
+    currentRx = 0; currentRy = 0;
+  });
+
+  /* Tap / click en mobile — pequeño "wobble" */
+  card.addEventListener('touchstart', () => {
+    card.style.animationPlayState = 'paused';
+    card.style.transform = 'rotate(8deg) scale(1.03)';
+    card.style.transition = 'transform 0.3s ease';
+  }, { passive: true });
+
+  card.addEventListener('touchend', () => {
+    card.style.transform = '';
+    setTimeout(() => {
+      card.style.transition = '';
+      card.style.animationPlayState = '';
+    }, 400);
+  }, { passive: true });
 })();
 
 

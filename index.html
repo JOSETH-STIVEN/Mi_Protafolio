@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseth Aguilar | Full Stack Developer</title>
+  <title>Joseth Aguilar | Fullstack Junior Developer</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,6 +57,9 @@
             <li class="nav-item"><a class="nav-link nav-item-link" href="#education">Estudios</a></li>
             <li class="nav-item"><a class="nav-link nav-item-link" href="#experience">Experiencia</a></li>
             <li class="nav-item"><a class="nav-link nav-item-link" href="#hobbies">Hobbies</a></li>
+            <li class="nav-item">
+              <a class="nav-link nav-item-link nav-contact-link" href="#contact">Contacto</a>
+            </li>
           </ul>
           <button id="themeToggle" class="theme-btn ms-3" aria-label="Cambiar tema">
             <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
@@ -68,7 +71,8 @@
   </header>
 
   <main>
-    <!-- ===== HERO ===== -->
+
+    <!-- ===== HERO (sin cambios) ===== -->
     <section id="hero" class="hero-section">
       <canvas id="heroCanvas"></canvas>
       <div class="container h-100">
@@ -93,7 +97,8 @@
               una experiencia de usuario excepcional.
             </p>
             <div class="hero-btns reveal-up">
-              <a href="#" class="btn-primary-cta">
+              <!-- Reemplaza Hoja de vida (1) (3).pdf con el nombre de tu archivo CV en esta carpeta -->
+              <a href="CV_Joseth_Aguilar.pdf" download="CV_Joseth_Aguilar.pdf" class="btn-primary-cta">
                 <i class="bi bi-file-earmark-person-fill"></i>
                 Descargar CV
               </a>
@@ -122,7 +127,7 @@
             <div class="hero-photo-wrap reveal-up">
               <div class="photo-glow"></div>
               <div class="photo-ring"></div>
-              <img src="img/Adobe_Express_-_file-removebg-preview.png" alt="Joseth Aguilar" class="hero-photo" />
+              <img src="img/foto-nueva.png" alt="Joseth Aguilar" class="hero-photo" />
               <div class="floating-tag tag-1">
                 <i class="bi bi-code-slash"></i> Full Stack
               </div>
@@ -151,39 +156,139 @@
           <h2 class="section-title">Perfil <span class="gradient-text">Profesional</span></h2>
         </div>
 
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-4 reveal">
-            <div class="about-photo-container">
-              <img src="img/Rectangle 4.png" alt="Joseth Aguilar" class="about-photo" />
-              <div class="about-photo-border"></div>
-              <div class="about-photo-glow"></div>
+        <!-- Stats row -->
+        <div class="stats-row reveal">
+          <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Proyectos publicados</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="9">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Tecnologías</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Años formándome</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-available">
+              <span class="stat-dot"></span>
+              <span class="stat-label-available">Disponible</span>
             </div>
+            <span class="stat-label">Para oportunidades</span>
+          </div>
+        </div>
+
+        <div class="row g-5 align-items-center mt-2">
+          <!-- ID CARD / CARNET COLGANTE -->
+          <div class="col-lg-4 reveal d-flex justify-content-center">
+            <div class="id-scene">
+
+              <!-- Gancho de pared -->
+              <div class="id-wall-hook">
+                <div class="hook-screw"></div>
+                <div class="hook-bar"></div>
+              </div>
+
+              <!-- Cordón del carnet -->
+              <div class="id-lanyard">
+                <div class="id-lanyard-cord"></div>
+                <div class="id-lanyard-clip">
+                  <div class="clip-body"></div>
+                  <div class="clip-tooth"></div>
+                </div>
+              </div>
+
+              <!-- Tarjeta / Carnet -->
+              <div class="id-card" id="idCard">
+
+                <!-- Agujero superior -->
+                <div class="id-hole"><div class="id-hole-inner"></div></div>
+
+                <!-- Cabecera del carnet -->
+                <div class="id-card-header">
+                  <div class="id-card-logo">JA</div>
+                  <div class="id-card-header-text">
+                    <span class="id-corp">JOSETH AGUILAR</span>
+                    <span class="id-year">DEV · 2025</span>
+                  </div>
+                  <div class="id-card-flag">🇨🇴</div>
+                </div>
+
+                <!-- Foto -->
+                <div class="id-photo-wrap">
+                  <div class="id-photo-ring-outer"></div>
+                  <div class="id-photo-frame">
+                    <img src="img/foto-nueva.png" alt="Joseth Aguilar" class="id-photo" />
+                  </div>
+                  <div class="id-status-dot"><i class="bi bi-check-lg"></i></div>
+                </div>
+
+                <!-- Nombre y cargo -->
+                <div class="id-name-block">
+                  <h4 class="id-name">Joseth Stiven Aguilar</h4>
+                  <span class="id-role-pill">Fullstack Junior Developer</span>
+                </div>
+
+                <!-- Separador -->
+                <div class="id-separator"></div>
+
+                <!-- Info de contacto -->
+                <div class="id-details">
+                  <div class="id-detail-row">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Villeta, Cundinamarca · COL</span>
+                  </div>
+                  <div class="id-detail-row">
+                    <i class="bi bi-telephone-fill"></i>
+                    <span>+57 320 459 0865</span>
+                  </div>
+                  <div class="id-detail-row">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>stivenaguilar10288@gmail.com</span>
+                  </div>
+                  <div class="id-detail-row">
+                    <i class="bi bi-github"></i>
+                    <span>github.com/JOSETH-STIVEN</span>
+                  </div>
+                </div>
+
+                <!-- Barcode -->
+                <div class="id-barcode-section">
+                  <div class="id-barcode-lines"></div>
+                  <span class="id-barcode-text">JSA · 2025 · FSDV · 001</span>
+                </div>
+
+                <!-- Pie del carnet -->
+                <div class="id-card-footer">
+                  <span>SENA · ADS · Tecnólogo</span>
+                  <span class="id-footer-valid">Válido 2025</span>
+                </div>
+
+              </div><!-- /id-card -->
+
+            </div><!-- /id-scene -->
           </div>
 
           <div class="col-lg-8 reveal">
             <p class="about-text">
-              Soy un desarrollador web apasionado por crear experiencias digitales modernas, funcionales
-              y visualmente atractivas. Trabajo con HTML, CSS, JavaScript y herramientas como Bootstrap
-              y Figma para construir interfaces intuitivas orientadas a resultados. Me apasiona transformar
-              ideas en soluciones que conecten con las personas y aporten valor real.
+              Desarrollador <strong>Fullstack Junior</strong> en formación, próximo a iniciar etapa productiva
+              de mi tecnólogo, con conocimientos en HTML, CSS, JavaScript, <strong>PHP, MySQL y Laravel</strong>.
+              Experiencia en proyectos académicos y personales enfocados en desarrollo del DOM, lógica de
+              negocio y control de versiones con Git y GitHub. Me apasiona transformar ideas en soluciones
+              digitales que conecten con las personas y aporten valor real.
             </p>
 
-            <div class="row g-3 mt-2">
+            <div class="row g-3 mt-1">
               <div class="col-sm-6">
                 <div class="info-row">
                   <i class="bi bi-person-fill"></i>
                   <div>
-                    <small>Nombre</small>
-                    <strong>Joseth Stiven Aguilar</strong>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="info-row">
-                  <i class="bi bi-telephone-fill"></i>
-                  <div>
-                    <small>Teléfono</small>
-                    <strong>+57 320 459 0865</strong>
+                    <small>Nombre completo</small>
+                    <strong>Joseth Stiven Aguilar Enciso</strong>
                   </div>
                 </div>
               </div>
@@ -192,16 +297,25 @@
                   <i class="bi bi-geo-alt-fill"></i>
                   <div>
                     <small>Ubicación</small>
-                    <strong>Colombia</strong>
+                    <strong>Villeta, Cundinamarca · Colombia</strong>
                   </div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="info-row">
-                  <i class="bi bi-envelope-fill"></i>
+                  <i class="bi bi-telephone-fill"></i>
                   <div>
-                    <small>Email</small>
-                    <strong>stivenaguilar10288@gmail.com</strong>
+                    <small>Teléfono / WhatsApp</small>
+                    <strong>+57 320 459 0865</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="info-row">
+                  <i class="bi bi-translate"></i>
+                  <div>
+                    <small>Idioma</small>
+                    <strong>Español · Nativo</strong>
                   </div>
                 </div>
               </div>
@@ -220,11 +334,17 @@
     <section id="skills" class="section-block section-alt">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">Lo que domino</span>
+          <span class="section-tag">Stack tecnológico</span>
           <h2 class="section-title">Mis <span class="gradient-text">Habilidades</span></h2>
         </div>
 
-        <div class="row g-4 mb-5">
+        <!-- Frontend -->
+        <div class="skill-group-label reveal">
+          <span class="skill-group-icon"><i class="bi bi-display"></i></span>
+          <span>Frontend</span>
+          <div class="skill-group-line"></div>
+        </div>
+        <div class="row g-4 mb-4">
           <div class="col-6 col-md-4 col-lg-3 reveal">
             <div class="skill-card">
               <div class="skill-icon-wrap">
@@ -265,14 +385,33 @@
               <span class="skill-pct">88%</span>
             </div>
           </div>
+        </div>
+
+        <!-- Backend & BD -->
+        <div class="skill-group-label reveal">
+          <span class="skill-group-icon"><i class="bi bi-server"></i></span>
+          <span>Backend &amp; Bases de Datos</span>
+          <div class="skill-group-line"></div>
+        </div>
+        <div class="row g-4 mb-4">
           <div class="col-6 col-md-4 col-lg-3 reveal">
             <div class="skill-card">
               <div class="skill-icon-wrap">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
               </div>
-              <h6>Figma</h6>
-              <div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div>
-              <span class="skill-pct">75%</span>
+              <h6>PHP</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="72"></div></div>
+              <span class="skill-pct">72%</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />
+              </div>
+              <h6>Laravel</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div>
+              <span class="skill-pct">65%</span>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3 reveal">
@@ -285,6 +424,15 @@
               <span class="skill-pct">70%</span>
             </div>
           </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="skill-group-label reveal">
+          <span class="skill-group-icon"><i class="bi bi-tools"></i></span>
+          <span>Herramientas</span>
+          <div class="skill-group-line"></div>
+        </div>
+        <div class="row g-4 mb-5">
           <div class="col-6 col-md-4 col-lg-3 reveal">
             <div class="skill-card">
               <div class="skill-icon-wrap">
@@ -296,20 +444,18 @@
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3 reveal">
-            <div class="skill-card skill-card-soft">
-              <div class="skill-icon-wrap soft-icon-wrap">
-                <i class="bi bi-people-fill"></i>
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
               </div>
-              <h6>Soft Skills</h6>
-              <div class="mini-tags">
-                <span>Liderazgo</span>
-                <span>Empatía</span>
-                <span>Equipo</span>
-              </div>
+              <h6>Figma</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="68"></div></div>
+              <span class="skill-pct">68%</span>
             </div>
           </div>
         </div>
 
+        <!-- Soft Skills -->
         <div class="soft-skills-wrap reveal">
           <h4 class="soft-title">Habilidades Blandas</h4>
           <div class="soft-grid">
@@ -338,6 +484,31 @@
 
         <div class="row g-4">
 
+          <!-- EN DESARROLLO — tarjeta especial -->
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card project-wip">
+              <div class="wip-badge">
+                <span class="wip-dot"></span> En Desarrollo
+              </div>
+              <div class="project-img-wrap project-wip-img">
+                <div class="wip-placeholder">
+                  <i class="bi bi-cpu-fill"></i>
+                  <span>Plataforma Web Fullstack</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>PHP</span><span>Laravel</span><span>MySQL</span><span>JS</span>
+                </div>
+                <h4>PLATAFORMA FULLSTACK</h4>
+                <p>Plataforma web completa en desarrollo activo — arquitectura fullstack con Laravel como backend, base de datos MySQL y frontend interactivo. Proyecto colaborativo en equipo.</p>
+                <span class="project-wip-cta">
+                  <i class="bi bi-hourglass-split"></i> Próximamente en GitHub
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div class="col-md-6 col-lg-4 reveal">
             <div class="project-card">
               <div class="project-img-wrap">
@@ -349,9 +520,7 @@
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-tags">
-                  <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
                 <h4>RUMBO</h4>
                 <p>Landing page para plataforma de turismo enfocada en aventura y experiencias naturales.</p>
                 <a href="https://joseth-stiven.github.io/Rumbo-practica-html-css/" target="_blank" rel="noopener" class="project-link-btn">
@@ -372,9 +541,7 @@
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-tags">
-                  <span>Bootstrap</span><span>CSS</span><span>JS</span>
-                </div>
+                <div class="project-tags"><span>Bootstrap</span><span>CSS</span><span>JS</span></div>
                 <h4>GIMNASIO</h4>
                 <p>Landing page moderna orientada al fitness, entrenamiento y estilo de vida saludable.</p>
                 <a href="https://joseth-stiven.github.io/Gimnasio-Bootstrap-/" target="_blank" rel="noopener" class="project-link-btn">
@@ -395,9 +562,7 @@
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-tags">
-                  <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
                 <h4>CINE</h4>
                 <p>Plataforma donde se encuentran las mejores películas gratuitas en un entorno intuitivo.</p>
                 <a href="https://joseth-stiven.github.io/Pagina-web-/" target="_blank" rel="noopener" class="project-link-btn">
@@ -418,9 +583,7 @@
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-tags">
-                  <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
                 <h4>DRIVEWAYS</h4>
                 <p>Plataforma donde se exploran diferentes vehículos junto con sus características.</p>
                 <a href="https://joseth-stiven.github.io/DRIVEWAYS/" target="_blank" rel="noopener" class="project-link-btn">
@@ -441,9 +604,7 @@
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-tags">
-                  <span>JavaScript</span><span>HTML</span><span>CSS</span>
-                </div>
+                <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
                 <h4>SIMULADOR</h4>
                 <p>Simulador que calcula los intereses según el monto y tiempo de inversión.</p>
                 <a href="https://joseth-stiven.github.io/simulador_inversion_js/" target="_blank" rel="noopener" class="project-link-btn">
@@ -464,9 +625,7 @@
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-tags">
-                  <span>JavaScript</span><span>HTML</span><span>CSS</span>
-                </div>
+                <div class="project-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
                 <h4>CURSOS</h4>
                 <p>Plataforma donde se gestionan cursos, agregándolos a una lista personalizada.</p>
                 <a href="https://joseth-stiven.github.io/Cursos/" target="_blank" rel="noopener" class="project-link-btn">
@@ -476,6 +635,15 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- CTA GitHub -->
+        <div class="text-center mt-5 reveal">
+          <a href="https://github.com/JOSETH-STIVEN" target="_blank" rel="noopener" class="github-cta-btn">
+            <i class="bi bi-github"></i>
+            Ver todos los proyectos en GitHub
+            <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -491,44 +659,47 @@
         <div class="timeline">
 
           <div class="timeline-item reveal">
-            <div class="timeline-dot">
-              <i class="bi bi-mortarboard-fill"></i>
-            </div>
+            <div class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></div>
             <div class="timeline-card">
-              <span class="timeline-date"><i class="bi bi-calendar3"></i> 2018 — 2023</span>
+              <div class="timeline-card-header">
+                <span class="timeline-date"><i class="bi bi-calendar3"></i> 2018 — 2023</span>
+                <span class="edu-badge completado"><i class="bi bi-check-circle-fill"></i> Completado</span>
+              </div>
               <h4>Bachiller Académico</h4>
               <h5>Colegio Sagrado Corazón</h5>
-              <p>Grado con excelentes notas académicas, destacando especialmente en el área de sistemas y tecnología informática.</p>
+              <p>Grado con excelentes notas académicas, destacando en el área de sistemas y tecnología informática.</p>
             </div>
           </div>
 
           <div class="timeline-item reveal">
-            <div class="timeline-dot">
-              <i class="bi bi-laptop-fill"></i>
-            </div>
-            <div class="timeline-card">
-              <span class="timeline-date"><i class="bi bi-calendar3"></i> 2023 — Actualidad</span>
+            <div class="timeline-dot active-dot"><i class="bi bi-laptop-fill"></i></div>
+            <div class="timeline-card timeline-card-active">
+              <div class="timeline-card-header">
+                <span class="timeline-date"><i class="bi bi-calendar3"></i> 2023 — Jul 2026</span>
+                <span class="edu-badge en-progreso"><span class="badge-dot"></span> En Progreso</span>
+              </div>
               <h4>Tecnólogo en Análisis y Desarrollo de Software</h4>
-              <h5>SENA</h5>
-              <p>Formación técnica integral en programación, bases de datos, desarrollo web y metodologías ágiles de software.</p>
+              <h5>SENA · Finalizando etapa práctica</h5>
+              <p>Próximo a iniciar etapa productiva. Formación integral en programación, bases de datos, desarrollo web y metodologías de software.</p>
+              <!-- Barra de progreso del tecnólogo -->
+              <div class="sena-progress-wrap">
+                <div class="sena-progress-label">
+                  <span>Avance del programa</span>
+                  <span class="sena-pct">~80%</span>
+                </div>
+                <div class="sena-progress-bar">
+                  <div class="sena-progress-fill"></div>
+                </div>
+                <small class="sena-date-note">Fin etapa práctica: <strong>21 / 07 / 2026</strong></small>
+              </div>
               <div class="timeline-tags">
                 <span><i class="bi bi-filetype-js"></i> JavaScript</span>
                 <span><i class="bi bi-filetype-html"></i> HTML5</span>
                 <span><i class="bi bi-filetype-css"></i> CSS3</span>
-                <span><i class="bi bi-database-fill"></i> SQL</span>
+                <span><i class="bi bi-database-fill"></i> MySQL</span>
+                <span><i class="bi bi-code-square"></i> PHP</span>
+                <span><i class="bi bi-layers-fill"></i> Laravel</span>
               </div>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">
-              <i class="bi bi-globe2"></i>
-            </div>
-            <div class="timeline-card">
-              <span class="timeline-date"><i class="bi bi-calendar3"></i> 2023 — Actualidad</span>
-              <h4>Oracle Next Education (ONE)</h4>
-              <h5>Oracle + Alura LATAM</h5>
-              <p>Programa de formación virtual en lenguajes de programación, herramientas modernas y habilidades técnicas orientadas al mercado IT latinoamericano.</p>
             </div>
           </div>
 
@@ -548,11 +719,20 @@
 
           <div class="col-lg-4 reveal">
             <div class="exp-card">
-              <div class="exp-icon-wrap">
-                <i class="bi bi-palette2"></i>
+              <div class="exp-icon-wrap"><i class="bi bi-cpu-fill"></i></div>
+              <h5>Plataforma Web Fullstack (En curso)</h5>
+              <p>Desarrollo activo de una plataforma web completa en equipo, asumiendo rol fullstack: frontend con JS/Bootstrap, backend con Laravel y diseño de base de datos MySQL.</p>
+              <div class="exp-tags">
+                <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JS</span>
               </div>
-              <h5>Diseño y Desarrollo de Landing Page</h5>
-              <p>Landing page atractiva para plataforma de turismo. Diseñada en Figma y desarrollada con HTML, CSS y JavaScript, con optimización UX, CTAs estratégicos y diseño responsivo.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="exp-card">
+              <div class="exp-icon-wrap"><i class="bi bi-palette2"></i></div>
+              <h5>Diseño y Desarrollo de Landing Pages</h5>
+              <p>Diseño y desarrollo de múltiples landing pages atractivas y funcionales (turismo, fitness, cine, autos). Diseñadas en Figma y desarrolladas con HTML, CSS y JavaScript con enfoque en UX.</p>
               <div class="exp-tags">
                 <span>Figma</span><span>HTML</span><span>CSS</span><span>JS</span>
               </div>
@@ -561,26 +741,11 @@
 
           <div class="col-lg-4 reveal">
             <div class="exp-card">
-              <div class="exp-icon-wrap">
-                <i class="bi bi-person-workspace"></i>
-              </div>
-              <h5>Portafolio Personal Web</h5>
-              <p>Diseñé y programé mi propio portafolio como carta de presentación digital. Apliqué buenas prácticas de diseño visual, animaciones con JavaScript y estructura responsive.</p>
+              <div class="exp-icon-wrap"><i class="bi bi-git"></i></div>
+              <h5>Desarrollo DOM y Lógica de Negocio</h5>
+              <p>Proyectos académicos enfocados en manipulación del DOM, lógica de negocio con JavaScript y control de versiones profesional con Git y GitHub. Trabajo colaborativo en equipo.</p>
               <div class="exp-tags">
-                <span>Figma</span><span>Bootstrap</span><span>GSAP</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 reveal">
-            <div class="exp-card">
-              <div class="exp-icon-wrap">
-                <i class="bi bi-people-fill"></i>
-              </div>
-              <h5>Colaboración en Proyecto Universitario</h5>
-              <p>Colaboré en un proyecto web para evento universitario, trabajando en maquetación HTML/CSS, funciones interactivas con JS y coordinación de diseño en Figma con el equipo.</p>
-              <div class="exp-tags">
-                <span>Teamwork</span><span>Figma</span><span>JS</span>
+                <span>JavaScript</span><span>DOM</span><span>Git</span><span>GitHub</span>
               </div>
             </div>
           </div>
@@ -674,6 +839,85 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== CONTACT (nueva sección) ===== -->
+    <section id="contact" class="section-block contact-section">
+      <div class="contact-bg-glow"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Trabajemos juntos</span>
+          <h2 class="section-title">¿Hablamos? <span class="gradient-text">Contáctame</span></h2>
+          <p class="contact-subtitle reveal">
+            Estoy disponible para oportunidades laborales, proyectos freelance o simplemente para conectar. ¡Escríbeme!
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center mb-5">
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <a href="mailto:stivenaguilar10288@gmail.com" class="contact-card">
+              <div class="contact-card-icon" style="--card-color: #ea4335;">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <h6>Email</h6>
+              <span>stivenaguilar10288<br/>@gmail.com</span>
+              <div class="contact-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <a href="https://wa.me/573204590865" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon" style="--card-color: #25d366;">
+                <i class="bi bi-whatsapp"></i>
+              </div>
+              <h6>WhatsApp</h6>
+              <span>+57 320 459 0865</span>
+              <div class="contact-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <a href="https://www.linkedin.com/in/stiven-aguilar-19275b368/" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon" style="--card-color: #0077b5;">
+                <i class="bi bi-linkedin"></i>
+              </div>
+              <h6>LinkedIn</h6>
+              <span>stiven-aguilar-<br/>19275b368</span>
+              <div class="contact-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <a href="https://github.com/JOSETH-STIVEN" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon" style="--card-color: #fff;">
+                <i class="bi bi-github"></i>
+              </div>
+              <h6>GitHub</h6>
+              <span>github.com/<br/>JOSETH-STIVEN</span>
+              <div class="contact-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- QR + CTA -->
+        <div class="contact-qr-row reveal">
+          <div class="contact-qr-block">
+            <img src="img/image 30.png" alt="QR de contacto" class="contact-qr-img" />
+            <div class="contact-qr-text">
+              <h6>Escanea el código QR</h6>
+              <p>Accede rápidamente a mis redes desde tu teléfono</p>
+            </div>
+          </div>
+          <a href="CV_Joseth_Aguilar.pdf" download="CV_Joseth_Aguilar.pdf" class="btn-primary-cta contact-cv-btn">
+            <i class="bi bi-file-earmark-arrow-down-fill"></i>
+            Descargar mi CV
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -684,7 +928,7 @@
 
         <div class="footer-brand-col">
           <img src="img/Group 2.png" alt="Logo JA" class="footer-logo" />
-          <p>Desarrollador Full Stack apasionado por crear experiencias digitales extraordinarias que marcan la diferencia.</p>
+          <p>Desarrollador Fullstack Junior apasionado por crear experiencias digitales extraordinarias.</p>
           <div class="footer-socials">
             <a href="https://www.linkedin.com/in/stiven-aguilar-19275b368/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
             <a href="https://github.com/JOSETH-STIVEN" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -701,7 +945,7 @@
             <li><a href="#skills"><i class="bi bi-code-slash"></i> Habilidades</a></li>
             <li><a href="#projects"><i class="bi bi-grid-fill"></i> Proyectos</a></li>
             <li><a href="#education"><i class="bi bi-mortarboard-fill"></i> Estudios</a></li>
-            <li><a href="#experience"><i class="bi bi-briefcase-fill"></i> Experiencia</a></li>
+            <li><a href="#contact"><i class="bi bi-send-fill"></i> Contacto</a></li>
           </ul>
         </div>
 
@@ -716,7 +960,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 <span class="gradient-text fw-bold">Joseth Stiven Aguilar</span> — Todos los derechos reservados</p>
+        <p>© 2025 <span class="gradient-text fw-bold">Joseth Stiven Aguilar Enciso</span> — Todos los derechos reservados</p>
         <p class="footer-made">Hecho con <i class="bi bi-heart-fill"></i> y mucho <span>☕</span></p>
       </div>
     </div>
