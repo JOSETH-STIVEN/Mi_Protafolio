@@ -1,848 +1,731 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joseth Aguilar | Full Stack Developer</title>
 
-    <!-- Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Estilos del proyecto -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 
-  <body class="body-theme">
-    <!-- =======================
-        HEADER + NAVBAR
-  ======================== -->
-    <header class="header-main" id="header">
-      <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-          <!-- Logo -->
-          <a class="navbar-brand brand-logo" href="#hero">
-            <img src="img/Group 2.png" alt="Logo" class="logo-img" />
-          </a>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-          <!-- Botón hamburguesa -->
-          <button
-            class="navbar-toggler nav-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainMenu"
-          >
-            <span class="navbar-toggler-icon"></span>
+<body>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scrollProgress"></div>
+
+  <!-- PAGE LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <span class="loader-initials">JA</span>
+    </div>
+  </div>
+
+  <!-- CURSOR CUSTOM -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="header" class="site-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#hero">
+          <img src="img/Group 2.png" alt="Logo JA" class="nav-logo" />
+        </a>
+
+        <button class="nav-hamburger" id="navToggler" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-center gap-1">
+            <li class="nav-item"><a class="nav-link nav-item-link active" href="#hero">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link nav-item-link" href="#about">Perfil</a></li>
+            <li class="nav-item"><a class="nav-link nav-item-link" href="#skills">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link nav-item-link" href="#projects">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link nav-item-link" href="#education">Estudios</a></li>
+            <li class="nav-item"><a class="nav-link nav-item-link" href="#experience">Experiencia</a></li>
+            <li class="nav-item"><a class="nav-link nav-item-link" href="#hobbies">Hobbies</a></li>
+          </ul>
+          <button id="themeToggle" class="theme-btn ms-3" aria-label="Cambiar tema">
+            <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+            <i class="bi bi-sun-fill theme-icon-light"></i>
           </button>
-
-          <!-- Menú principal -->
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="mainMenu"
-          >
-            <ul class="navbar-nav nav-links">
-              <li class="nav-item">
-                <a class="nav-link nav-item-link active" href="#hero">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-item-link" href="#perfil">Perfil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-item-link" href="#habilidades"
-                  >Habilidades</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-item-link" href="#portafolio"
-                  >Portafolio</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-item-link" href="#estudios">Estudios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-item-link" href="#experiencias"
-                  >Experiencia</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-item-link" href="#hobbies">Hobbies</a>
-              </li>
-            </ul>
-
-            <!-- Botón Dark / Light Mode -->
-            <button id="themeToggle" class="theme-toggle">
-              <i class="bi bi-moon-stars"></i>
-            </button>
-          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <main class="contenido-principal">
-      <section id="hero" class="hero section-hero">
-        <div class="container">
-          <div class="row align-items-center justify-content-between">
-            <!-- Texto principal -->
-            <div class="col-12 col-md-6 hero-text">
-              <h1 class="hero-title fw-bold">JOSETH AGUILAR</h1>
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero-section">
+      <canvas id="heroCanvas"></canvas>
+      <div class="container h-100">
+        <div class="row h-100 align-items-center g-5">
 
-              <p class="hero-description">
-                Combino creatividad, lógica y tecnología para dar vida a ideas
-                digitales. Como desarrollador web, disfruto transformar
-                conceptos en productos funcionales, visualmente atractivos y con
-                una excelente experiencia de usuario.
-              </p>
-
-              <a href="#" class="btn btn-primary hero-btn">
-                <i class="bi bi-file-earmark-person-fill"></i> Descargar CV
+          <div class="col-lg-7 hero-content">
+            <p class="hero-greeting reveal-up">
+              <span class="greeting-line"></span> Hola, soy
+            </p>
+            <h1 class="hero-name reveal-up">
+              Joseth <span class="gradient-text">Aguilar</span>
+            </h1>
+            <div class="hero-role reveal-up">
+              <span class="role-bracket">&lt;</span>
+              <span id="typewriter" class="role-typed"></span>
+              <span class="role-cursor">|</span>
+              <span class="role-bracket">/&gt;</span>
+            </div>
+            <p class="hero-description reveal-up">
+              Combino creatividad, lógica y tecnología para dar vida a ideas digitales.
+              Transformo conceptos en productos funcionales, visualmente atractivos y con
+              una experiencia de usuario excepcional.
+            </p>
+            <div class="hero-btns reveal-up">
+              <a href="#" class="btn-primary-cta">
+                <i class="bi bi-file-earmark-person-fill"></i>
+                Descargar CV
+              </a>
+              <a href="#projects" class="btn-outline-cta">
+                Ver Proyectos
+                <i class="bi bi-arrow-right"></i>
               </a>
             </div>
-
-            <!-- Imagen principal -->
-            <div class="col-12 col-md-5 hero-image text-center">
-              <img
-                src="img/Adobe_Express_-_file-removebg-preview.png"
-                alt="Foto de Joseth Aguilar"
-                class="img-fluid hero-photo"
-              />
+            <div class="hero-socials reveal-up">
+              <a href="https://www.linkedin.com/in/stiven-aguilar-19275b368/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="https://github.com/JOSETH-STIVEN" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+                <i class="bi bi-github"></i>
+              </a>
+              <a href="mailto:stivenaguilar10288@gmail.com" class="social-btn" aria-label="Email">
+                <i class="bi bi-envelope-fill"></i>
+              </a>
+              <a href="https://wa.me/573204590865" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+              </a>
             </div>
           </div>
+
+          <div class="col-lg-5 hero-photo-col">
+            <div class="hero-photo-wrap reveal-up">
+              <div class="photo-glow"></div>
+              <div class="photo-ring"></div>
+              <img src="img/Adobe_Express_-_file-removebg-preview.png" alt="Joseth Aguilar" class="hero-photo" />
+              <div class="floating-tag tag-1">
+                <i class="bi bi-code-slash"></i> Full Stack
+              </div>
+              <div class="floating-tag tag-2">
+                <i class="bi bi-palette2"></i> UI/UX
+              </div>
+              <div class="floating-tag tag-3">
+                <i class="bi bi-lightning-charge-fill"></i> JS Dev
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="hero-scroll-cue">
+        <div class="scroll-dot"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Sobre mí</span>
+          <h2 class="section-title">Perfil <span class="gradient-text">Profesional</span></h2>
         </div>
 
-        
-      </section>
-
-      <section id="perfil" class="section-perfil py-5">
-        <div class="container">
-          <div class="row align-items-center justify-content-between">
-            <!-- FOTO -->
-            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
-              <img
-                src="img/Rectangle 4.png"
-                alt="Foto de Joseth Aguilar"
-                class="img-fluid perfil-photo shadow-lg rounded-4"
-              />
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-4 reveal">
+            <div class="about-photo-container">
+              <img src="img/Rectangle 4.png" alt="Joseth Aguilar" class="about-photo" />
+              <div class="about-photo-border"></div>
+              <div class="about-photo-glow"></div>
             </div>
+          </div>
 
-            <!-- INFORMACIÓN -->
-            <div class="col-12 col-md-7">
-              <h2 class="perfil-title text-uppercase fw-bold mb-3">
-                Perfil Profesional
-              </h2>
+          <div class="col-lg-8 reveal">
+            <p class="about-text">
+              Soy un desarrollador web apasionado por crear experiencias digitales modernas, funcionales
+              y visualmente atractivas. Trabajo con HTML, CSS, JavaScript y herramientas como Bootstrap
+              y Figma para construir interfaces intuitivas orientadas a resultados. Me apasiona transformar
+              ideas en soluciones que conecten con las personas y aporten valor real.
+            </p>
 
-              <p class="perfil-description">
-                Soy un desarrollador web enfocado en crear experiencias
-                digitales modernas, funcionales y visualmente atractivas.
-                Trabajo con HTML, CSS, JavaScript y herramientas de diseño como
-                Figma para construir interfaces intuitivas, fluidas y orientadas
-                a resultados. Me apasiona transformar ideas en soluciones que
-                conecten con las personas y aporten valor real.
-              </p>
-
-              <!-- TARJETA DE DATOS -->
-              <div class="perfil-card card shadow-lg border-0 mt-4">
-                <div class="card-body">
-                  <p class="mb-1"><strong>Nombre:</strong> Joseth Stiven</p>
-                  <p class="mb-1"><strong>Apellido:</strong> Aguilar Enciso</p>
-                  <p class="mb-3"><strong>Teléfono:</strong> 3204590865</p>
-
-                  <p class="mb-2 fw-semibold">Redes:</p>
-
-                  <div class="d-flex gap-3 redes-icons">
-                    <a
-                      href="https://www.linkedin.com/in/stiven-aguilar-19275b368/"
-                      target="_blank"
-                      class="icono-red"
-                    >
-                      <i class="bi bi-linkedin"></i>
-                    </a>
-
-                    <a
-                      href="https://github.com/JOSETH-STIVEN"
-                      target="_blank"
-                      class="icono-red"
-                    >
-                      <i class="bi bi-github"></i>
-                    </a>
-
-                    <a
-                      href="mailto:stivenaguilar10288@gmail.com"
-                      class="icono-red"
-                    >
-                      <i class="bi bi-envelope-fill"></i>
-                    </a>
-
-                    <a
-                      href="https://wa.me/573204590865"
-                      target="_blank"
-                      class="icono-red"
-                    >
-                      <i class="bi bi-whatsapp"></i>
-                    </a>
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="info-row">
+                  <i class="bi bi-person-fill"></i>
+                  <div>
+                    <small>Nombre</small>
+                    <strong>Joseth Stiven Aguilar</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="info-row">
+                  <i class="bi bi-telephone-fill"></i>
+                  <div>
+                    <small>Teléfono</small>
+                    <strong>+57 320 459 0865</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="info-row">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <div>
+                    <small>Ubicación</small>
+                    <strong>Colombia</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="info-row">
+                  <i class="bi bi-envelope-fill"></i>
+                  <div>
+                    <small>Email</small>
+                    <strong>stivenaguilar10288@gmail.com</strong>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- FRASE -->
-          <div class="row mt-5">
-            <div class="col-12">
-              <p class="perfil-frase text-center fst-italic fw-bold">
-                “La creatividad es mi herramienta, la innovación mi objetivo”
-              </p>
+            <blockquote class="about-quote">
+              <i class="bi bi-quote"></i>
+              "La creatividad es mi herramienta, la innovación mi objetivo"
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Lo que domino</span>
+          <h2 class="section-title">Mis <span class="gradient-text">Habilidades</span></h2>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+              </div>
+              <h6>HTML5</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+              <span class="skill-pct">90%</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="habilidades" class="section-habilidades py-5">
-  <div class="container">
-
-    <!-- TÍTULO -->
-    <h2 class="text-center fw-bold section-title mb-5">Habilidades</h2>
-
-    <div class="row g-4 justify-content-center">
-
-      <!-- HTML -->
-      <div class="col-md-4">
-        <div class="skill-card text-center p-4 bounce-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="skill-svg" alt="HTML" />
-          <h5 class="fw-bold mt-3">HTML</h5>
-          <p>
-            Lenguaje base para estructurar sitios web, creando contenido organizado y accesible.
-          </p>
-        </div>
-      </div>
-
-      <!-- JavaScript -->
-      <div class="col-md-4">
-        <div class="skill-card text-center p-4 bounce-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="skill-svg" alt="JS" />
-          <h5 class="fw-bold mt-3">JavaScript</h5>
-          <p>
-            Lenguaje que da vida a la web. Creo interactividad, animaciones y funcionalidad dinámica.
-          </p>
-        </div>
-      </div>
-
-      <!-- CSS -->
-      <div class="col-md-4">
-        <div class="skill-card text-center p-4 bounce-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="skill-svg" alt="CSS" />
-          <h5 class="fw-bold mt-3">CSS</h5>
-          <p>
-            Defino estilos modernos, layouts responsivos y animaciones fluidas para interfaces atractivas.
-          </p>
-        </div>
-      </div>
-
-      <!-- FIGMA -->
-      <div class="col-md-4">
-        <div class="skill-card text-center p-4 bounce-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="skill-svg" alt="Figma" />
-          <h5 class="fw-bold mt-3">Figma</h5>
-          <p>
-            Diseño prototipos profesionales y wireframes que aseguran interfaces claras y funcionales.
-          </p>
-        </div>
-      </div>
-
-      <!-- Soft Skills -->
-      <div class="col-md-8">
-        <div class="skill-card p-4 softskills-card bounce-card">
-          <h5 class="fw-bold text-center mb-3">Habilidades Blandas</h5>
-          <ul class="lista-softskills">
-            <li>Comunicación efectiva</li>
-            <li>Trabajo en equipo</li>
-            <li>Resolución de problemas</li>
-            <li>Adaptabilidad</li>
-            <li>Gestión del tiempo</li>
-            <li>Creatividad</li>
-            <li>Escucha activa</li>
-            <li>Empatía</li>
-            <li>Pensamiento crítico</li>
-            <li>Responsabilidad</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECCIÓN OCULTA -->
-    <div class="row g-4 mt-4 d-none" id="masHabilidades">
-
-      <!-- BASES DE DATOS -->
-      <div class="col-md-4">
-        <div class="skill-card text-center p-4 bounce-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="skill-svg" alt="MySQL" />
-          <h5 class="fw-bold mt-3">Bases de Datos</h5>
-          <p>
-            Manejo MySQL y SQL para estructurar, gestionar y consultar datos eficientemente.
-          </p>
-        </div>
-      </div>
-
-      <!-- Git -->
-      <div class="col-md-4">
-        <div class="skill-card text-center p-4 bounce-card">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="skill-svg" alt="Git" />
-          <h5 class="fw-bold mt-3">Git & GitHub</h5>
-          <p>
-            Control de versiones profesional, ramas, pull requests y trabajo colaborativo.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- BOTÓN VER MÁS -->
-    <div class="text-center mt-4">
-      <button class="btn btn-outline-light fw-bold boton-ver-mas" id="btnVerMas">
-        Ver más
-      </button>
-    </div>
-
-  </div>
-</section>
-
-
-      <section id="portafolio" class="section-portafolio py-5">
-  <div class="container">
-    <!-- Título -->
-    <div class="text-center mb-5">
-      <h2 class="section-title fw-bold">Portafolio</h2>
-      <p class="section-subtitle">Algunos de mis proyectos recientes</p>
-    </div>
-
-    <!-- Grid de proyectos -->
-    <div class="row g-4">
-      <!-- PROYECTO 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-card">
-          <div class="portfolio-img-container">
-            <img
-              src="img/Captura de pantalla 2025-10-03 153439.png"
-              alt="Rumbo - Plataforma de turismo"
-              class="portfolio-img"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h4>RUMBO</h4>
-            <p>
-              Landing page para una plataforma de turismo enfocada en
-              aventura y experiencias naturales.
-            </p>
-            <a
-              href="https://joseth-stiven.github.io/Rumbo-practica-html-css/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-visit"
-            >
-              <i class="bi bi-github"></i> Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROYECTO 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-card">
-          <div class="portfolio-img-container">
-            <img
-              src="img/Captura de pantalla 2025-10-03 153801.png"
-              alt="Gimnasio - Plataforma fitness"
-              class="portfolio-img"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h4>GIMNASIO</h4>
-            <p>
-              Landing page moderna orientada al fitness, entrenamiento y
-              estilo de vida saludable.
-            </p>
-            <a
-              href="https://joseth-stiven.github.io/Gimnasio-Bootstrap-/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-visit"
-            >
-              <i class="bi bi-github"></i> Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROYECTO 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-card">
-          <div class="portfolio-img-container">
-            <img
-              src="img/Captura de pantalla 2025-10-03 153359.png"
-              alt="Cine - Plataforma de películas"
-              class="portfolio-img"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h4>CINE</h4>
-            <p>
-              Plataforma donde se encuentran las mejores películas
-              gratuitas en un entorno intuitivo.
-            </p>
-            <a
-              href="https://joseth-stiven.github.io/Pagina-web-/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-visit"
-            >
-              <i class="bi bi-github"></i> Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROYECTO 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-card">
-          <div class="portfolio-img-container">
-            <img
-              src="img/Captura de pantalla 2025-10-03 153843.png"
-              alt="Driveways - Tienda de carros"
-              class="portfolio-img"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h4>TIENDA DE CARROS</h4>
-            <p>
-              Plataforma donde se exploran diferentes vehículos junto con
-              sus características.
-            </p>
-            <a
-              href="https://joseth-stiven.github.io/DRIVEWAYS/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-visit"
-            >
-              <i class="bi bi-github"></i> Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROYECTO 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-card">
-          <div class="portfolio-img-container">
-            <img
-              src="img/Captura de pantalla 2025-10-03 153530.png"
-              alt="Simulador de inversiones"
-              class="portfolio-img"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h4>SIMULADOR DE INVERSIONES</h4>
-            <p>
-              Simulador que calcula los intereses según el monto y tiempo
-              de inversión.
-            </p>
-            <a
-              href="https://joseth-stiven.github.io/simulador_inversion_js/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-visit"
-            >
-              <i class="bi bi-github"></i> Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROYECTO 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="portfolio-card">
-          <div class="portfolio-img-container">
-            <img
-              src="img/Captura de pantalla 2025-10-03 153710.png"
-              alt="Cursos - Plataforma educativa"
-              class="portfolio-img"
-            />
-          </div>
-          <div class="portfolio-content">
-            <h4>CURSOS</h4>
-            <p>
-              Plataforma donde se gestionan cursos, agregándolos a una
-              lista personalizada.
-            </p>
-            <a
-              href="https://joseth-stiven.github.io/Cursos/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-visit"
-            >
-              <i class="bi bi-github"></i> Ver Proyecto
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      <section id="estudios" class="container py-5 position-relative">
-  <h2 class="text-center fw-bold mb-4">ESTUDIOS</h2>
-
-  <div
-    id="carouselEstudios"
-    class="carousel slide"
-    data-bs-ride="carousel"
-    data-bs-interval="5000"
-  >
-    <!-- Indicadores -->
-    <div class="carousel-indicators">
-      <button
-        type="button"
-        data-bs-target="#carouselEstudios"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselEstudios"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-    </div>
-
-    <div class="carousel-inner">
-      <!-- === SLIDE 1 === -->
-      <div class="carousel-item active">
-        <div class="row justify-content-center">
-          <!-- Bachiller -->
-          <div class="col-md-4">
-            <div class="card estudio-card text-center">
-              <i class="bi bi-mortarboard icono-estudio"></i>
-              <h5 class="fw-bold">BACHILLER</h5>
-              <p>
-                Terminé mi grado en el colegio Sagrado Corazón en el año
-                2023, obteniendo excelentes notas académicas y destacando
-                en el área de sistemas.
-              </p>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+              </div>
+              <h6>CSS3</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+              <span class="skill-pct">85%</span>
             </div>
           </div>
-
-          <!-- SENA -->
-          <div class="col-md-4">
-            <div class="card estudio-card text-center">
-              <i class="bi bi-laptop icono-estudio"></i>
-              <h5 class="fw-bold">SENA</h5>
-              <p>
-                Actualmente curso un Tecnólogo en Análisis y Desarrollo de
-                Software, fortaleciendo mis conocimientos en programación.
-              </p>
-
-              <div class="d-flex justify-content-center gap-2 mt-2">
-                <i class="bi bi-filetype-js icono-mini" title="JavaScript"></i>
-                <i class="bi bi-filetype-html icono-mini" title="HTML5"></i>
-                <i class="bi bi-filetype-css icono-mini" title="CSS3"></i>
-                <i class="bi bi-bezier icono-mini" title="Diseño"></i>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+              </div>
+              <h6>JavaScript</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+              <span class="skill-pct">80%</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+              </div>
+              <h6>Bootstrap</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+              <span class="skill-pct">88%</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+              </div>
+              <h6>Figma</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="75"></div></div>
+              <span class="skill-pct">75%</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+              </div>
+              <h6>MySQL</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div>
+              <span class="skill-pct">70%</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card">
+              <div class="skill-icon-wrap">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+              </div>
+              <h6>Git &amp; GitHub</h6>
+              <div class="skill-bar-wrap"><div class="skill-bar" data-width="78"></div></div>
+              <span class="skill-pct">78%</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="skill-card skill-card-soft">
+              <div class="skill-icon-wrap soft-icon-wrap">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h6>Soft Skills</h6>
+              <div class="mini-tags">
+                <span>Liderazgo</span>
+                <span>Empatía</span>
+                <span>Equipo</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Oracle -->
-          <div class="col-md-4">
-            <div class="card estudio-card text-center">
-              <i class="bi bi-globe icono-estudio"></i>
-              <h5 class="fw-bold">ORACLE</h5>
-              <p>
-                Formación virtual enfocada en fortalecer habilidades
-                técnicas, aprendiendo lenguajes de programación y
-                herramientas modernas.
-              </p>
-            </div>
+        <div class="soft-skills-wrap reveal">
+          <h4 class="soft-title">Habilidades Blandas</h4>
+          <div class="soft-grid">
+            <div class="soft-tag"><i class="bi bi-chat-dots-fill"></i> Comunicación efectiva</div>
+            <div class="soft-tag"><i class="bi bi-people-fill"></i> Trabajo en equipo</div>
+            <div class="soft-tag"><i class="bi bi-puzzle-fill"></i> Resolución de problemas</div>
+            <div class="soft-tag"><i class="bi bi-arrow-repeat"></i> Adaptabilidad</div>
+            <div class="soft-tag"><i class="bi bi-clock-fill"></i> Gestión del tiempo</div>
+            <div class="soft-tag"><i class="bi bi-lightbulb-fill"></i> Creatividad</div>
+            <div class="soft-tag"><i class="bi bi-ear-fill"></i> Escucha activa</div>
+            <div class="soft-tag"><i class="bi bi-heart-fill"></i> Empatía</div>
+            <div class="soft-tag"><i class="bi bi-search"></i> Pensamiento crítico</div>
+            <div class="soft-tag"><i class="bi bi-check2-circle"></i> Responsabilidad</div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- === SLIDE 2 === -->
-      <div class="carousel-item">
-        <div class="row justify-content-center">
-          <div class="col-md-4">
-            <div class="card estudio-card text-center">
-              <i class="bi bi-book icono-estudio"></i>
-              <h5 class="fw-bold">CERTIFICACIONES</h5>
-              <p>
-                Espacio disponible para agregar futuros estudios,
-                certificaciones o cursos complementarios que enriquezcan
-                mi formación profesional.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card estudio-card text-center">
-              <i class="bi bi-star icono-estudio"></i>
-              <h5 class="fw-bold">PRÓXIMOS ESTUDIOS</h5>
-              <p>
-                En constante aprendizaje y búsqueda de nuevas oportunidades
-                para expandir mis conocimientos en tecnología y desarrollo.
-              </p>
-            </div>
-          </div>
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Mi trabajo</span>
+          <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Controles -->
-  <button
-    class="carousel-control-prev custom-control"
-    type="button"
-    data-bs-target="#carouselEstudios"
-    data-bs-slide="prev"
-    aria-label="Anterior"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </button>
+        <div class="row g-4">
 
-  <button
-    class="carousel-control-next custom-control"
-    type="button"
-    data-bs-target="#carouselEstudios"
-    data-bs-slide="next"
-    aria-label="Siguiente"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  </button>
-</section>
-
-      <section id="experiencias" class="container py-5 text-center">
-  <h2 class="fw-bold mb-4">EXPERIENCIAS</h2>
-
-  <div class="row justify-content-center mt-4 g-4">
-    <!-- Experiencia 1 -->
-    <div class="col-md-4 d-flex">
-      <div class="card experiencia-card w-100">
-        <h5 class="fw-bold text-uppercase">
-          Diseño y Desarrollo de Landing Page
-        </h5>
-        <p>
-          Creé una landing page atractiva y funcional para una plataforma
-          de turismo. Diseñada inicialmente en Figma y desarrollada con
-          HTML, CSS y JavaScript. El proyecto incluyó optimización UX,
-          CTAs estratégicos y diseño completamente responsivo.
-        </p>
-      </div>
-    </div>
-
-    <!-- Experiencia 2 -->
-    <div class="col-md-4 d-flex">
-      <div class="card experiencia-card w-100">
-        <h5 class="fw-bold text-uppercase">Portafolio Personal Web</h5>
-        <p>
-          Diseñé y programé mi propio portafolio como carta de
-          presentación digital. Apliqué buenas prácticas de diseño visual,
-          agregué animaciones suaves con JavaScript y logré una estructura
-          responsive. Todo el diseño fue creado previamente en Figma.
-        </p>
-      </div>
-    </div>
-
-    <!-- Experiencia 3 -->
-    <div class="col-md-6 d-flex">
-      <div class="card experiencia-card w-100">
-        <h5 class="fw-bold text-uppercase">Trabajo en Equipo</h5>
-        <p>
-          Colaboré en un proyecto web para un evento universitario,
-          trabajando en maquetación con HTML y CSS, y apoyando en
-          funciones interactivas con JavaScript. El diseño se coordinó en
-          Figma, fortaleciendo la comunicación y el trabajo colaborativo.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Más experiencias (ocultas) -->
-  <div class="collapse mt-4" id="masExperiencias">
-    <div class="row justify-content-center g-4">
-      <div class="col-md-4 d-flex">
-        <div class="card experiencia-card w-100">
-          <h5 class="fw-bold text-uppercase">Proyecto Freelance</h5>
-          <p>
-            Desarrollo de interfaz web para cliente independiente,
-            implementando diseño moderno con animaciones y efectos
-            visuales avanzados para mejorar la experiencia del usuario.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4 d-flex">
-        <div class="card experiencia-card w-100">
-          <h5 class="fw-bold text-uppercase">Optimización Web</h5>
-          <p>
-            Mejora del rendimiento de sitios web existentes, aplicando
-            técnicas de optimización de código, imágenes y carga para
-            lograr mejores tiempos de respuesta.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Botón -->
-  <div class="mt-4">
-    <button
-      class="btn btn-ver-mas"
-      id="btnVerMas"
-      data-bs-toggle="collapse"
-      data-bs-target="#masExperiencias"
-      aria-expanded="false"
-      aria-controls="masExperiencias"
-    >
-      VER MÁS <i class="bi bi-chevron-down"></i>
-    </button>
-  </div>
-</section>
-
-    <section id="hobbies" class="container py-5">
-      <h2 class="fw-bold text-center mb-5">HOBBIES</h2>
-
-      <div class="row justify-content-center g-4">
-        
-        <div class="col-md-4">
-          <div class="hobby-card">
-            <div class="hobby-card-inner">
-              <div class="hobby-card-front text-center">
-                <div class="hobby-img-wrapper">
-                  <img src="img/Rectangle 25.png" alt="Fútbol" class="hobby-img" />
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card">
+              <div class="project-img-wrap">
+                <img src="img/Captura de pantalla 2025-10-03 153439.png" alt="Rumbo" class="project-img" />
+                <div class="project-overlay">
+                  <a href="https://joseth-stiven.github.io/Rumbo-practica-html-css/" target="_blank" rel="noopener" class="overlay-btn">
+                    <i class="bi bi-eye-fill"></i> Ver Demo
+                  </a>
                 </div>
-                <h5>Fútbol</h5>
               </div>
-              <div class="hobby-card-back text-center">
-                <div class="hobby-back-content">
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+                <h4>RUMBO</h4>
+                <p>Landing page para plataforma de turismo enfocada en aventura y experiencias naturales.</p>
+                <a href="https://joseth-stiven.github.io/Rumbo-practica-html-css/" target="_blank" rel="noopener" class="project-link-btn">
+                  <i class="bi bi-box-arrow-up-right"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card">
+              <div class="project-img-wrap">
+                <img src="img/Captura de pantalla 2025-10-03 153801.png" alt="Gimnasio" class="project-img" />
+                <div class="project-overlay">
+                  <a href="https://joseth-stiven.github.io/Gimnasio-Bootstrap-/" target="_blank" rel="noopener" class="overlay-btn">
+                    <i class="bi bi-eye-fill"></i> Ver Demo
+                  </a>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>Bootstrap</span><span>CSS</span><span>JS</span>
+                </div>
+                <h4>GIMNASIO</h4>
+                <p>Landing page moderna orientada al fitness, entrenamiento y estilo de vida saludable.</p>
+                <a href="https://joseth-stiven.github.io/Gimnasio-Bootstrap-/" target="_blank" rel="noopener" class="project-link-btn">
+                  <i class="bi bi-box-arrow-up-right"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card">
+              <div class="project-img-wrap">
+                <img src="img/Captura de pantalla 2025-10-03 153359.png" alt="Cine" class="project-img" />
+                <div class="project-overlay">
+                  <a href="https://joseth-stiven.github.io/Pagina-web-/" target="_blank" rel="noopener" class="overlay-btn">
+                    <i class="bi bi-eye-fill"></i> Ver Demo
+                  </a>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+                <h4>CINE</h4>
+                <p>Plataforma donde se encuentran las mejores películas gratuitas en un entorno intuitivo.</p>
+                <a href="https://joseth-stiven.github.io/Pagina-web-/" target="_blank" rel="noopener" class="project-link-btn">
+                  <i class="bi bi-box-arrow-up-right"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card">
+              <div class="project-img-wrap">
+                <img src="img/Captura de pantalla 2025-10-03 153843.png" alt="Driveways" class="project-img" />
+                <div class="project-overlay">
+                  <a href="https://joseth-stiven.github.io/DRIVEWAYS/" target="_blank" rel="noopener" class="overlay-btn">
+                    <i class="bi bi-eye-fill"></i> Ver Demo
+                  </a>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+                <h4>DRIVEWAYS</h4>
+                <p>Plataforma donde se exploran diferentes vehículos junto con sus características.</p>
+                <a href="https://joseth-stiven.github.io/DRIVEWAYS/" target="_blank" rel="noopener" class="project-link-btn">
+                  <i class="bi bi-box-arrow-up-right"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card">
+              <div class="project-img-wrap">
+                <img src="img/Captura de pantalla 2025-10-03 153530.png" alt="Simulador" class="project-img" />
+                <div class="project-overlay">
+                  <a href="https://joseth-stiven.github.io/simulador_inversion_js/" target="_blank" rel="noopener" class="overlay-btn">
+                    <i class="bi bi-eye-fill"></i> Ver Demo
+                  </a>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>JavaScript</span><span>HTML</span><span>CSS</span>
+                </div>
+                <h4>SIMULADOR</h4>
+                <p>Simulador que calcula los intereses según el monto y tiempo de inversión.</p>
+                <a href="https://joseth-stiven.github.io/simulador_inversion_js/" target="_blank" rel="noopener" class="project-link-btn">
+                  <i class="bi bi-box-arrow-up-right"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="project-card">
+              <div class="project-img-wrap">
+                <img src="img/Captura de pantalla 2025-10-03 153710.png" alt="Cursos" class="project-img" />
+                <div class="project-overlay">
+                  <a href="https://joseth-stiven.github.io/Cursos/" target="_blank" rel="noopener" class="overlay-btn">
+                    <i class="bi bi-eye-fill"></i> Ver Demo
+                  </a>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-tags">
+                  <span>JavaScript</span><span>HTML</span><span>CSS</span>
+                </div>
+                <h4>CURSOS</h4>
+                <p>Plataforma donde se gestionan cursos, agregándolos a una lista personalizada.</p>
+                <a href="https://joseth-stiven.github.io/Cursos/" target="_blank" rel="noopener" class="project-link-btn">
+                  <i class="bi bi-box-arrow-up-right"></i> Ver Proyecto
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Mi formación</span>
+          <h2 class="section-title">Educación <span class="gradient-text">&amp; Estudios</span></h2>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date"><i class="bi bi-calendar3"></i> 2018 — 2023</span>
+              <h4>Bachiller Académico</h4>
+              <h5>Colegio Sagrado Corazón</h5>
+              <p>Grado con excelentes notas académicas, destacando especialmente en el área de sistemas y tecnología informática.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">
+              <i class="bi bi-laptop-fill"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date"><i class="bi bi-calendar3"></i> 2023 — Actualidad</span>
+              <h4>Tecnólogo en Análisis y Desarrollo de Software</h4>
+              <h5>SENA</h5>
+              <p>Formación técnica integral en programación, bases de datos, desarrollo web y metodologías ágiles de software.</p>
+              <div class="timeline-tags">
+                <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+                <span><i class="bi bi-filetype-html"></i> HTML5</span>
+                <span><i class="bi bi-filetype-css"></i> CSS3</span>
+                <span><i class="bi bi-database-fill"></i> SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date"><i class="bi bi-calendar3"></i> 2023 — Actualidad</span>
+              <h4>Oracle Next Education (ONE)</h4>
+              <h5>Oracle + Alura LATAM</h5>
+              <p>Programa de formación virtual en lenguajes de programación, herramientas modernas y habilidades técnicas orientadas al mercado IT latinoamericano.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section-block">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Mi trayectoria</span>
+          <h2 class="section-title">Experiencia <span class="gradient-text">Profesional</span></h2>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4 reveal">
+            <div class="exp-card">
+              <div class="exp-icon-wrap">
+                <i class="bi bi-palette2"></i>
+              </div>
+              <h5>Diseño y Desarrollo de Landing Page</h5>
+              <p>Landing page atractiva para plataforma de turismo. Diseñada en Figma y desarrollada con HTML, CSS y JavaScript, con optimización UX, CTAs estratégicos y diseño responsivo.</p>
+              <div class="exp-tags">
+                <span>Figma</span><span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="exp-card">
+              <div class="exp-icon-wrap">
+                <i class="bi bi-person-workspace"></i>
+              </div>
+              <h5>Portafolio Personal Web</h5>
+              <p>Diseñé y programé mi propio portafolio como carta de presentación digital. Apliqué buenas prácticas de diseño visual, animaciones con JavaScript y estructura responsive.</p>
+              <div class="exp-tags">
+                <span>Figma</span><span>Bootstrap</span><span>GSAP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="exp-card">
+              <div class="exp-icon-wrap">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h5>Colaboración en Proyecto Universitario</h5>
+              <p>Colaboré en un proyecto web para evento universitario, trabajando en maquetación HTML/CSS, funciones interactivas con JS y coordinación de diseño en Figma con el equipo.</p>
+              <div class="exp-tags">
+                <span>Teamwork</span><span>Figma</span><span>JS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOBBIES ===== -->
+    <section id="hobbies" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Fuera del código</span>
+          <h2 class="section-title">Mis <span class="gradient-text">Hobbies</span></h2>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+          <div class="col-md-4 reveal">
+            <div class="hobby-card" tabindex="0">
+              <div class="hobby-inner">
+                <div class="hobby-front">
+                  <div class="hobby-img-wrap">
+                    <img src="img/Rectangle 25.png" alt="Fútbol" class="hobby-img" />
+                    <div class="hobby-img-overlay"></div>
+                  </div>
+                  <div class="hobby-front-info">
+                    <i class="bi bi-dribbble"></i>
+                    <h5>Fútbol</h5>
+                    <span class="flip-hint"><i class="bi bi-arrow-clockwise"></i> Ver más</span>
+                  </div>
+                </div>
+                <div class="hobby-back">
+                  <i class="bi bi-dribbble hobby-back-icon"></i>
                   <h5>Fútbol</h5>
-                  <div class="divider"></div>
-                  <p>
-                    Más que un deporte, es mi forma de desconectar. Disfruto la estrategia en el campo, el trabajo en equipo y la adrenalina de cada partido los fines de semana recordando las epocas de ex jugador de cantera de un equipo profesional.
-                  </p>
+                  <div class="hobby-divider"></div>
+                  <p>Más que un deporte, es mi forma de desconectar. Disfruto la estrategia en el campo, el trabajo en equipo y la adrenalina de cada partido. Ex jugador de cantera de un equipo profesional.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="hobby-card">
-            <div class="hobby-card-inner">
-              <div class="hobby-card-front text-center">
-                <div class="hobby-img-wrapper">
-                  <img src="img/Rectangle 26.png" alt="Videojuegos" class="hobby-img" />
+          <div class="col-md-4 reveal">
+            <div class="hobby-card" tabindex="0">
+              <div class="hobby-inner">
+                <div class="hobby-front">
+                  <div class="hobby-img-wrap">
+                    <img src="img/Rectangle 26.png" alt="Videojuegos" class="hobby-img" />
+                    <div class="hobby-img-overlay"></div>
+                  </div>
+                  <div class="hobby-front-info">
+                    <i class="bi bi-controller"></i>
+                    <h5>Videojuegos</h5>
+                    <span class="flip-hint"><i class="bi bi-arrow-clockwise"></i> Ver más</span>
+                  </div>
                 </div>
-                <h5>Videojuegos</h5>
-              </div>
-              <div class="hobby-card-back text-center">
-                <div class="hobby-back-content">
+                <div class="hobby-back">
+                  <i class="bi bi-controller hobby-back-icon"></i>
                   <h5>Videojuegos</h5>
-                  <div class="divider"></div>
-                  <p>
-                    Desde títulos de mundo abierto hasta juegos de estrategia. Me apasiona analizar las mecánicas de juego y la narrativa visual que ofrecen las nuevas tecnologías.
-                  </p>
+                  <div class="hobby-divider"></div>
+                  <p>Desde títulos de mundo abierto hasta juegos de estrategia. Me apasiona analizar las mecánicas de juego y la narrativa visual que ofrecen las nuevas tecnologías.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="hobby-card">
-            <div class="hobby-card-inner">
-              <div class="hobby-card-front text-center">
-                <div class="hobby-img-wrapper">
-                  <img src="img/Rectangle 27.png" alt="Música" class="hobby-img" />
+          <div class="col-md-4 reveal">
+            <div class="hobby-card" tabindex="0">
+              <div class="hobby-inner">
+                <div class="hobby-front">
+                  <div class="hobby-img-wrap">
+                    <img src="img/Rectangle 27.png" alt="Música" class="hobby-img" />
+                    <div class="hobby-img-overlay"></div>
+                  </div>
+                  <div class="hobby-front-info">
+                    <i class="bi bi-music-note-beamed"></i>
+                    <h5>Música</h5>
+                    <span class="flip-hint"><i class="bi bi-arrow-clockwise"></i> Ver más</span>
+                  </div>
                 </div>
-                <h5>Música</h5>
-              </div>
-              <div class="hobby-card-back text-center">
-                <div class="hobby-back-content">
+                <div class="hobby-back">
+                  <i class="bi bi-music-note-beamed hobby-back-icon"></i>
                   <h5>Música</h5>
-                  <div class="divider"></div>
-                  <p>
-                    La música es mi motor creativo. Ya sea escuchando nuevos géneros o tocando instrumentos, siempre hay una melodía acompañando mis sesiones de programación.
-                  </p>
+                  <div class="hobby-divider"></div>
+                  <p>La música es mi motor creativo. Ya sea escuchando nuevos géneros o tocando instrumentos, siempre hay una melodía acompañando mis sesiones de programación.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   </main>
 
-    
-<footer class="footer-hero mt-5 py-4">
-  <div class="container">
-    <div class="row align-items-center text-center text-md-start">
-      <!-- Enlaces -->
-      <div
-        class="col-md-9 d-flex justify-content-center justify-content-md-start gap-4 flex-wrap"
-      >
-        <a
-          href="https://www.linkedin.com/in/stiven-aguilar-19275b368"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="enlace-contacto"
-        >
-          <i class="bi bi-linkedin"></i> LinkedIn
-        </a>
-        <a
-          href="https://github.com/JOSETH-STIVEN"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="enlace-contacto"
-        >
-          <i class="bi bi-github"></i> GitHub
-        </a>
-        <a
-          href="mailto:stivenaguilar10288@gmail.com"
-          class="enlace-contacto"
-        >
-          <i class="bi bi-envelope"></i> Correo
-        </a>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-glow-top"></div>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand-col">
+          <img src="img/Group 2.png" alt="Logo JA" class="footer-logo" />
+          <p>Desarrollador Full Stack apasionado por crear experiencias digitales extraordinarias que marcan la diferencia.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/stiven-aguilar-19275b368/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/JOSETH-STIVEN" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:stivenaguilar10288@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            <a href="https://wa.me/573204590865" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h6>Navegación</h6>
+          <ul>
+            <li><a href="#hero"><i class="bi bi-house-fill"></i> Inicio</a></li>
+            <li><a href="#about"><i class="bi bi-person-fill"></i> Perfil</a></li>
+            <li><a href="#skills"><i class="bi bi-code-slash"></i> Habilidades</a></li>
+            <li><a href="#projects"><i class="bi bi-grid-fill"></i> Proyectos</a></li>
+            <li><a href="#education"><i class="bi bi-mortarboard-fill"></i> Estudios</a></li>
+            <li><a href="#experience"><i class="bi bi-briefcase-fill"></i> Experiencia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-qr-col">
+          <h6>Contáctame</h6>
+          <div class="footer-qr-wrap">
+            <img src="img/image 30.png" alt="QR de contacto" class="footer-qr" />
+            <p>Escanea el código para contactarme directamente</p>
+          </div>
+        </div>
+
       </div>
 
-      <!-- QR -->
-      <div class="col-md-3 text-center mt-4 mt-md-0">
-        <p class="mb-2 fw-bold">Contáctame</p>
-        <img
-          src="img/image 30.png"
-          alt="Código QR de contacto"
-          class="qr-contacto"
-        />
+      <div class="footer-bottom">
+        <p>© 2025 <span class="gradient-text fw-bold">Joseth Stiven Aguilar</span> — Todos los derechos reservados</p>
+        <p class="footer-made">Hecho con <i class="bi bi-heart-fill"></i> y mucho <span>☕</span></p>
       </div>
     </div>
+  </footer>
 
-    <!-- Derechos -->
-    <div class="text-center mt-4">
-      <p class="small mb-0">
-        © 2025 Stiven Aguilar — Todos los derechos reservados
-      </p>
-    </div>
-  </div>
-</footer>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
